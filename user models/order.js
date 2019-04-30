@@ -13,7 +13,7 @@ var order={
         return db.query("select * from order_tbl ",callback);
     },
     addToOrder:function(item,callback){
-        var order_date=Date.now();
+        var order_date=new Date();
           return db.query("insert into order_tbl values(?,?,?,?,?,?)",[,order_date,item.order_amount,item.fk_user_email," ",'1'],callback);        
     },
     addToOrderDetails:function(item,callback){
